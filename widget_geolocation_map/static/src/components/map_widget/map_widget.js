@@ -44,10 +44,15 @@ export class MapWidget extends Component {
         {
           coordinates: this.state.coordinates,
           save: (newCoordinates) => {
+
             this.state.coordinates = newCoordinates;
+            console.log('newCoordinates:', newCoordinates);
+
+            
             this.props.record.update({
               [this.props.name]: newCoordinates,
             });
+            console.log('this.props.name:', this.props.name);
           },
           close: () => {
             this.state.isPopoverOpen = false;
